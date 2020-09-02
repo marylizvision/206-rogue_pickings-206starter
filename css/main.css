@@ -46,7 +46,7 @@ h4 {
 p {
 	font-size: 0.875em;
 	line-height: 1.313em;
-    padding: 0 30px;
+    /* padding: 0 30px; */
 }
 
 /*The widths are in a percentage!*/
@@ -63,8 +63,12 @@ header {
 
 header h1 {
 	/* float: left; */
+	border-bottom: 3px solid #77a466;
 	margin: 0;
-	padding: 38px 0;
+	text-align: center;
+	width: 100%;
+	/* padding: 38px 0; */
+	padding: 30px 0 10px 0;
 }
 header h1 span {
 	color: #77a466;
@@ -72,7 +76,9 @@ header h1 span {
 
 header nav {
 	/* float: right; */
-	padding: 46px 0;
+	display: flex;
+	/* padding: 46px 0; */
+	padding: 20px 0;
 }
 header nav ul {
 	display: flex;
@@ -89,7 +95,7 @@ header nav ul li {
 	font-weight: 700;
 	font-size: 0.875em;
 	/* flex-flow: column wrap; */
-	padding: 0 10px;
+	padding: 10px 0 10px 0;
 	width: 100%;
 
 }
@@ -129,7 +135,7 @@ header nav ul li a{
 	color: #77a466;
 }
 .main-title p {
-	padding: 0;
+	/* padding: 0; */
 	font-size: 1em;
 	line-height: 1.563em;
 }
@@ -155,7 +161,7 @@ header nav ul li a{
 
 .section-two h4,
 .section-three h4 {
-	padding: 10px 30px;
+	/* padding: 10px 30px; */
 }
 
 .menu {
@@ -171,7 +177,7 @@ header nav ul li a{
 	color: #333;
 	font-size: 1em;
 	line-height: 1.313em;
-	width: 100%;
+	/* width: 100%; */
 }
 
 .address {
@@ -196,4 +202,49 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+
+/***** BREAKPOINTS *****/
+
+@media all and (min-width: 768px) {
+.bottom-section {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+}
+
+.section-one {
+	display: flex;
+	flex-direction: column;
+	/* height: auto; */
+	width: 100%;
+}
+
+.section-two {
+	display: flex;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	flex-direction: column;
+	padding: 10px 30px;
+	/* height: auto; */
+	width: 100%;
+}
+
+.section-three {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 30px;
+	/* height: auto; */
+	width:100%;
+}
+
+}
+
+@media all and (min-width: 1200px) {
+
+header nav ul {
+	display: flex;
+	justify-content: space-between;
+}
+
 }
