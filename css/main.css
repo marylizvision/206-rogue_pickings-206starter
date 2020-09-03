@@ -8,15 +8,16 @@ body {
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	justify-content: center;
-	width: 100%;
+	/* width: 100%; */
 }
 
 .container{
 	align-items: center;
 	display: flex;
-	flex-flow: column wrap;
+	/* I had column wrap, compared to solution code's row wrap! hmm... */
+	flex-flow: row wrap;
 	justify-content: center;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	max-width: 1200px;
 	width: 90%;
 }
@@ -53,9 +54,11 @@ header {
 	/* height: 110px; */
 	border-bottom: 3px solid #77a466;
 	display: flex;
-	flex-flow: column wrap;
+	/* Again I had column wrap instead of row! */
+	flex-flow: row wrap;
 	justify-content: center;
-	margin: 0 auto;
+	/* Why did I think I needed margin 0 auto?? I think I was having trouble centering and was looking for a fix. */
+	/* margin: 0 auto; */
 	width: 100%;
 }
 
@@ -72,17 +75,16 @@ header h1 span {
 }
 
 header nav {
-	/* float: right; */
-	display: flex;
-	/* padding: 46px 0; */
+	/* display: flex; */
 	padding: 1.25em 0;
+	width: 100%;
 }
 header nav ul {
-	display: flex;
-	justify-content: space-between;
+	/* display: flex; */
+	/* justify-content: space-between; */
 	margin: 0;
 	padding: 0;
-	flex-flow: column wrap;
+	/* flex-flow: column wrap; */
 }
 header nav ul li {
 	align-items: center;
@@ -91,9 +93,10 @@ header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 0.875em;
+	list-style: none;
 	/* flex-flow: column wrap; */
 	padding: 0.625em 0 0.625em 0;
-	width: 100%;
+	/* width: 100%; */
 
 }
 header nav ul li a{
@@ -107,16 +110,18 @@ header nav ul li a{
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	flex-flow: column wrap;
-	margin: 0 auto;
-	width: 100%;
-	/* clear: both; */
+	/* Again with the column! */
+	flex-flow: row wrap;
+	/* Again with the margin 0 auto! */
+	/* margin: 0 auto; */
+	/* width: 100%; */
 }
 
 .main-image {
 	height: auto;
 	/* float: left; */
 }
+
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
@@ -140,31 +145,19 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	width: 100%;
-	height: auto;
-	/* float: left; */
 	border-top: 1px solid #eee;
+	width: 100%;
 }
 
 .section-one h4 {
 	padding: 10px 0;
 }
 
-.section-two {
-	/* border-left: 1px solid #eee;
-	border-right: 1px solid #eee; */
-	/* width: 100%; */
-}
-
-.section-two h4,
-.section-three h4 {
-	/* padding: 10px 30px; */
-}
-
 .menu {
 	list-style: none;
 	padding: 0;
 }
+
 .menu li {
 	padding: 10px 0;
 	color:#77a466;
@@ -174,7 +167,6 @@ header nav ul li a{
 	color: #333;
 	font-size: 1em;
 	line-height: 1.313em;
-	/* width: 100%; */
 }
 
 .address {
@@ -184,13 +176,11 @@ header nav ul li a{
 
 /*The widths are in a percentage!*/
 footer {
-	/* height: 50px; */
 	align-items: center;
 	border-top: 3px solid #eee;
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
-	/* clear: both; */
 	text-align: center;
 	width: 100%;
 }
@@ -204,64 +194,65 @@ footer span {
 /***** BREAKPOINTS *****/
 
 @media all and (min-width: 768px) {
-.bottom-section {
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: flex-start;
-}
+		.bottom-section {
+			/* Already in flex since parent element is already in flexbox */
+			/* display: flex; */
+			flex-flow: row nowrap;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
 
-.section-one {
-	display: flex;
-	flex-direction: column;
-	/* height: auto; */
-	width: 100%;
-}
+		.section-one {
+			display: flex;
+			flex-direction: column;
+			/* height: auto; */
+			width: 100%;
+		}
 
-.section-two {
-	display: flex;
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-	flex-direction: column;
-	padding: 10px 30px;
-	/* height: auto; */
-	width: 100%;
-}
+		.section-two {
+			display: flex;
+			border-left: 1px solid #eee;
+			border-right: 1px solid #eee;
+			flex-direction: column;
+			padding: 10px 30px;
+			width: 100%;
+		}
 
-.section-three {
-	display: flex;
-	flex-direction: column;
-	padding: 10px 30px;
-	/* height: auto; */
-	width:100%;
-}
+		.section-three {
+			display: flex;
+			flex-direction: column;
+			padding: 10px 30px;
+			/* height: auto; */
+			width:100%;
+		}
 
 }
 
 @media all and (min-width: 1200px) {
 
-header {
-	display: flex;
-	flex-flow: row nowrap;
-	padding: 4em 0 2em 0;
-}
+		header {
+			/* Flexbox is already turned on above so no need to turn it on again here */
+			/* display: flex; */
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			padding: 4em 0 2em 0;
+			/* width: 1200px; */
+		}
 
-header h1 {
-	display: flex;
-	border-bottom: none;
-	padding: 0;
-}
+		header h1 {
+			display: flex;
+			/* Or could do text-align: left as it's not going to be affected by needing to flex */
+			border-bottom: none;
+			padding: 0;
+			/* width: 600px; */
+		}
 
-header nav ul {
-	display: flex;
-	/* justify-content: space-between; */
-	flex-flow: row nowrap;
-	padding: 0;
-}
-
-header nav ul li {
-	display: flex;
-	padding: 0;
-	padding: 0 0 0 1.250em;
-}
+		header nav ul {
+			display: flex;
+			justify-content: space-between;
+			flex-flow: row nowrap;
+			padding: 0;
+			width: 600px;
+		}
 
 }
