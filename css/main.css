@@ -240,19 +240,25 @@ footer span {
 		}
 
 		header h1 {
-			display: flex;
+			/* display: flex; */
 			/* Or could do text-align: left as it's not going to be affected by needing to flex */
 			border-bottom: none;
 			padding: 0;
+			text-align: left;
+			width: 30%
 			/* width: 600px; */
 		}
+
+header nav {
+			width: 45%;
+}
 
 		header nav ul {
 			display: flex;
 			justify-content: space-between;
 			flex-flow: row nowrap;
 			padding: 0;
-			width: 600px;
+			width: 100%;
 		}
 
 }
